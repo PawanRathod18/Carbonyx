@@ -1,0 +1,2 @@
+.quick-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.quick-link { text-decoration: none; display: block; }

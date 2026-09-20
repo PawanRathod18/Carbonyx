@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/docs.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="docs">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Documentation</p>
+      <h1>Methodology and <span class="hl">architecture</span></h1>
+      <p>How CARBONYX computes, verifies and trades blue carbon - the complete methodology, formulas and references behind the platform.</p>
+    </div>
+
+    <div class="card doc-section" style="margin-top:30px">
+      <h3>Methodology</h3>
+      <h4>1. Satellite classification (Sentinel-2)</h4>
+      <p>The quantification engine classifies vegetation from multispectral imagery using two standard indices:</p>
+      <div class="codebox formula">NDVI = (NIR - RED) / (NIR + RED) &nbsp;&nbsp;|&nbsp;&nbsp; NDWI = (GREEN - NIR) / (GREEN + NIR)</div>
+      <p>Pixels with NDVI above the ecosystem-specific threshold (mangrove 0.45, salt marsh 0.35, seagrass 0.15 - submerged canopies give a weaker signal) and below cloud cover are classified as ecosystem vegetation. In simulated mode, deterministic synthetic Sentinel-2 tiles are generated per project; in real mode, a Google Earth Engine median composite over the COPERNICUS/S2_SR_HARMONIZED collection is used.</p>
+
+      <h4>2. InVEST-style coastal blue carbon model</h4>
+      <p>Carbon stock follows the Natural Capital Project's Coastal Blue Carbon logic:</p>
+      <div class="codebox formula">stock = AGB + BGB + soil &nbsp;&nbsp;where&nbsp;&nbsp; AGB = vigour x max_AGB x area</div>
+      <p>Above-ground biomass is scaled by a normalised vigour index derived from NDVI; below-ground biomass applies an ecosystem root:shoot ratio; soil carbon applies a per-hectare default over one metre of depth. Sequestration is projected linearly over 20 years with a 10% conservative buffer, mirroring registry buffer pools.</p>
+      <div class="codebox">
+mangrove : max AGB 380 t/ha - soil 550 tC/ha - sequestration 1.80 tC/ha/yr
+seagrass : max AGB   8 t/ha - soil 110 tC/ha - sequestration 0.80 tC/ha/yr
+saltmarsh: max AGB  60 t/ha - soil 255 tC/ha - sequestration 1.20 tC/ha/yr
+1 tC = 3.667 tCO2e (44/12) - biomass carbon fraction 0.47</div>
+
+      <h4>3. Machine-learning cross-check</h4>
+      <p>A RandomForest regressor trained on synthetic samples predicts above-ground biomass density from mean NDVI, vegetation fraction and ecosystem type. The model's estimate is compared with the empirical estimate; large deviations raise a risk flag for the verifier. Model quality (R2 on a held-out split) is reported with every estimate and on the Analytics page.</p>
+
+      <h4>4. Risk flags and recommendation</h4>
+      <p>Rule-based anomaly detection runs over every report: cloud fraction, implausible vegetation fractions, NDVI ceilings, low confidence and ML deviation. The system then issues an explicit recommendation (approve / review / reject) that the human verifier can accept or override.</p>
+
+      <h4>5. On-chain anchoring</h4>
+      <p>Each report is serialised canonically and hashed with SHA-256. When a verifier approves a project, the hash is written to the registry contract. Minting of CBX credits (1 CBX = 1 tCO2e) is gated by the smart contract: only verified projects, only once, only by the recorded owner, capped by the buffered projection.</p>
+    </div>
+
+    <div class="card doc-section">
+      <h3>System architecture</h3>
+      <div class="arch-diagram">
+        <div class="arch-layer"><div class="arch-node arch-frontend"><b>Frontend</b><br>12 HTML pages, vanilla JS, glassmorphic UI, chatbot, cart, maps</div></div>
+        <div class="arch-arrow">&#8595;</div>
+        <div class="arch-layer"><div class="arch-node arch-backend"><b>FastAPI Backend</b><br>24+ endpoints, SQLite, PBKDF2 auth, CORS</div></div>
+        <div class="arch-arrow">&#8595;</div>
+        <div class="arch-layer arch-row">
+          <div class="arch-node arch-ml"><b>ML Model</b><br>RandomForest<br>R&#178; &#8776; 0.999</div>
+          <div class="arch-node arch-carbon"><b>Carbon Model</b><br>InVEST-style<br>AGB + BGB + soil</div>
+          <div class="arch-node arch-sat"><b>Sentinel-2 Sim</b><br>NDVI / NDWI<br>synthetic tiles</div>
+        </div>
+        <div class="arch-arrow">&#8595;</div>
+        <div class="arch-layer"><div class="arch-node arch-chain"><b>Embedded Python EVM Chain</b><br>eth-tester / py-evm<br>3 Solidity contracts: Registry, Credit (ERC-20), Marketplace</div></div>
+      </div>
+      <div class="arch-stack">
+        <div class="arch-stack-item"><b>Frontend:</b> Plain HTML/JS/CSS, 12 pages, no React, no Node.js</div>
+        <div class="arch-stack-item"><b>Backend:</b> Python FastAPI, 24+ endpoints, SQLite, PBKDF2 auth, web3.py bridge</div>
+        <div class="arch-stack-item"><b>ML:</b> scikit-learn RandomForest, biomass cross-check, R&#178; &#8776; 0.999</div>
+        <div class="arch-stack-item"><b>Carbon:</b> InVEST-style model, AGB + BGB + soil carbon, 20-year projection</div>
+        <div class="arch-stack-item"><b>Blockchain:</b> Embedded Python EVM (eth-tester/py-evm), 3 Solidity contracts, no MetaMask</div>
+        <div class="arch-stack-item"><b>Single command:</b> python start.py installs deps, starts server, opens browser</div>
+      </div>
+    </div>
+
+    <div class="card doc-section">
+      <h3>Key references</h3>
+      <ul>
+        <li>N. Gorelick et al., "Google Earth Engine: Planetary-scale geospatial analysis for everyone," Remote Sensing of Environment, 2017.</li>
+        <li>P. I. Macreadie et al., "Blue carbon as a natural climate solution," Nature Reviews Earth and Environment, 2021.</li>
+        <li>A. Vilkov and G. Tian, "Blockchain's scope and purpose in carbon markets," Sustainability, 2023.</li>
+        <li>R. Sharp et al., Coastal Blue Carbon - InVEST User Guide, Natural Capital Project, Stanford University.</li>
+        <li>S. Jaffer et al., "Global, robust and comparable digital carbon assets," IEEE ICBC, 2024.</li>
+        <li>C. Patil et al., "Blockchain-Powered Carbon Credit Trading System using Cap-and-Trade Mechanism," IEEE ICBDS, 2024.</li>
+      </ul>
+    </div>
+
+    <div class="card doc-section">
+      <h3>About the builder</h3>
+      <p class="flow-note">CARBONYX is an independent portfolio project, <b style="color:var(--amber-light)">designed and built end-to-end by Pawan Rathod</b> — backend, embedded blockchain, quantification models, smart contracts and the full frontend design system.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

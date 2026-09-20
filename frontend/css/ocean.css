@@ -1,0 +1,58 @@
+.card:hover, .svc:hover, .stat:hover, .quick-link .card:hover,
+.project-card:hover, .verify-block:hover, .chart-card:hover {
+  border-color: rgba(245, 166, 35, .5) !important;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, .55), 0 0 30px rgba(245, 166, 35, .18) !important;
+}
+
+.member:hover {
+  border-color: rgba(245, 166, 35, .5) !important;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, .6), 0 0 44px rgba(245, 166, 35, .16) !important;
+}
+.member:hover .avatar { box-shadow: 0 0 50px rgba(245, 166, 35, .55) !important; }
+
+.btn.primary:hover, .gc-btn:hover, .tour-fab:hover {
+  box-shadow: 0 12px 40px rgba(245, 166, 35, .4), 0 0 26px rgba(245, 166, 35, .3) !important;
+}
+
+.btn.ghosty:hover, .btn.ghost:hover, .gc-demo-btn:hover, .pillnav .pill:hover, .filter-chip:hover {
+  border-color: #f5a623 !important;
+  color: #ffd57e !important;
+  box-shadow: 0 0 20px rgba(245, 166, 35, .24) !important;
+}
+
+.pillnav > a:hover, .pillnav .navdrop > button:hover, .nav-link:hover, .navdrop-menu a:hover {
+  color: #ffd57e !important;
+  background: rgba(245, 166, 35, .09) !important;
+}
+.logo:hover { filter: drop-shadow(0 0 12px rgba(245, 166, 35, .55)) !important; }
+
+.tstep:hover { box-shadow: 0 0 24px rgba(245, 166, 35, .08) !important; }
+.svc:hover .icon, .tstep:hover .n { box-shadow: 0 0 18px rgba(245, 166, 35, .35), inset 0 1px 0 rgba(247, 226, 186, .2) !important; }
+
+.block-row:hover { border-color: rgba(245, 166, 35, .42) !important; box-shadow: 0 0 24px rgba(245, 166, 35, .07) !important; }
+.proj-result:hover, .city-result:hover { border-color: rgba(245, 166, 35, .42) !important; background: rgba(245, 166, 35, .05) !important; }
+.badge:hover { border-color: rgba(245, 166, 35, .4) !important; }
+tbody tr:hover td { background: linear-gradient(90deg, rgba(245, 166, 35, .07), transparent) !important; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ffd57e, #f5a623) !important; }
+
+body.light-mode .topbar .nav-link,
+body.light-mode .topbar .brand { color: #24303e; }
+body.light-mode .topbar .nav-link:hover { color: #9a6b1e; }
+body.light-mode .card h3, body.light-mode .card h4,
+body.light-mode .stat .v, body.light-mode .member h4,
+body.light-mode .modal h3, body.light-mode .userchip b,
+body.light-mode .gc-title, body.light-mode .hero-title,
+body.light-mode .portal-strip .stat .v,
+body.light-mode .chart-title, body.light-mode .ct-value,
+body.light-mode .ck-row b, body.light-mode .ci-name,
+body.light-mode .cb-name, body.light-mode .cb-msg.bot,
+body.light-mode .pr-name, body.light-mode .city-name { color: #25201a !important; }
+body.light-mode .card p, body.light-mode .member p,
+body.light-mode .member .role, body.light-mode .svc p,
+body.light-mode .muted, body.light-mode .gc-loc,
+body.light-mode .portal-strip .stat .l, body.light-mode .gc-stat-l,
+body.light-mode .pr-meta, body.light-mode .city-country,
+body.light-mode .cb-status, body.light-mode .ci-meta,
+body.light-mode .auth-note, body.light-mode .auth-alt,
+body.light-mode .lead, body.light-mode .hero-sub,
+body.light-mode .proof-text, body.light-mode .axis-note { color: #5c5344 !important; }

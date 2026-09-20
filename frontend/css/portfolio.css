@@ -1,0 +1,6 @@
+.hero-progress { height: 14px; border-radius: 999px; background: rgba(245, 166, 35,.12); overflow: hidden; margin: 10px 0 6px; }
+.hero-progress > i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, #22c55e, #ffd57e); transition: width 1.3s cubic-bezier(.2,.7,.3,1); box-shadow: 0 0 14px rgba(255, 213, 126,.6); }
+.badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.badge { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); font-size: .74rem; color: var(--muted); background: rgba(13, 13, 30,.6); transition: transform .25s, border-color .25s; }
+.badge.earned { border-color: var(--green); color: var(--green); box-shadow: 0 0 16px rgba(52,211,153,.25); }
+.badge.earned::before { content: "\2713 "; }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification and Minting - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/verification.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="verification">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Independent review</p>
+      <h1>Verification and <span class="hl">minting</span></h1>
+      <p>Acting as the independent verifier, review each project's quantification report, then approve or reject it. Approved projects can mint CBX credits.</p>
+    </div>
+
+    <div class="info-strip" style="margin-top:26px">
+      The verifier role is granted on-chain by the platform admin. When you approve a project,
+      the <b>SHA-256 hash of its quantification report</b> is written to the registry contract -
+      permanent, auditable evidence linking the credits to the analysis behind them.
+    </div>
+
+    <div id="verification-list"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/verification.js?v=47"></script>
+<script src="js/tour.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

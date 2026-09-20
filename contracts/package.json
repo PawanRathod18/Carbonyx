@@ -1,0 +1,20 @@
+{
+  "name": "carbonyx-contracts",
+  "version": "1.0.0",
+  "description": "CARBONYX blue carbon smart contracts (registry, credit token, marketplace)",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "2.0.8",
+    "@nomicfoundation/hardhat-ethers": "3.0.8",
+    "chai": "4.4.1",
+    "ethers": "6.13.4",
+    "hardhat": "2.22.17",
+    "mocha": "10.4.0"
+  }
+}

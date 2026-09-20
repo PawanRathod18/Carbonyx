@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/portfolio.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="portfolio">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Account view</p>
+      <h1>Your <span class="hl">portfolio</span></h1>
+      <p>Holdings, listings and climate impact for the selected account. Retiring credits earns permanent climate-hero ranks.</p>
+    </div>
+
+    <div class="info-strip" style="margin-top:26px">
+      Pick any demo account from the header selector - the portfolio below follows it:
+      holdings, active listings, retired tonnes and recent on-chain activity.
+    </div>
+    <div class="stat-strip" style="margin-top:8px">
+      <div class="stat"><div class="v" id="p-cbx" data-count="0">0</div><div class="l">CBX credits held</div></div>
+      <div class="stat"><div class="v" id="p-retired" data-count="0">0</div><div class="l">Tonnes retired forever</div></div>
+      <div class="stat"><div class="v" id="p-listings" data-count="0">0</div><div class="l">Active listings</div></div>
+      <div class="stat"><div class="v" id="p-eth" data-count="0" data-decimals="3">0</div><div class="l">ETH balance</div></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:24px">
+      <div class="card">
+        <h3>Climate hero progress</h3>
+        <p class="hint" id="hero-note">Retire credits to climb the ladder.</p>
+        <div class="hero-progress"><i id="hero-bar"></i></div>
+        <p class="hint"><b id="hero-next">100 t</b> to the next rank</p>
+        <div class="badge-row">
+          <span class="badge" id="badge-100">Blue Carbon Supporter - 100 t</span>
+          <span class="badge" id="badge-1000">Coastline Guardian - 1,000 t</span>
+          <span class="badge" id="badge-10000">Ocean Climate Champion - 10,000 t</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Retirement impact</h3>
+        <div id="portfolio-impact"></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Active listings by this account</h3>
+        <table class="table">
+          <thead><tr><th>ID</th><th>Credits</th><th>Price / credit</th><th>Total (ETH)</th></tr></thead>
+          <tbody id="p-listings-body"></tbody>
+        </table>
+        <div id="p-listings-empty" class="empty">No active listings.</div>
+      </div>
+      <div class="card">
+        <h3>Recent activity</h3>
+        <div id="p-activity" class="event-list"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/portfolio.js?v=47"></script>
+
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+fastapi>=0.110
+uvicorn>=0.29
+web3>=7.0
+sqlalchemy>=2.0
+pydantic>=2.6
+numpy>=1.26
+scikit-learn>=1.4        # ML biomass cross-check layer (optional but recommended)
+email-validator>=2.0     # account signup/login
+
+# Optional: real Google Earth Engine mode (CARBONYX_GEE_MODE=gee)
+# earthengine-api>=0.1.400
+# Embedded Python chain (no Node.js needed). NOTE: eth-tester is installed
+# WITHOUT the [py-evm] extra because that extra pulls safe-pysha3, which has
+# no Windows wheels. py-evm + eth-hash[pycryptodome] provide the same stack
+# with pre-built wheels on every platform.
+eth-tester>=0.12
+py-evm>=0.12
+eth-hash[pycryptodome]>=0.5

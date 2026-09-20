@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chain Log - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/chain.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="chain">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Full audit trail</p>
+      <h1>On-chain <span class="hl">event log</span></h1>
+      <p>Every registration, verification, mint, listing, purchase and retirement - with its transaction hash and block number. This is the transparency layer of CARBONYX.</p>
+    </div>
+
+    <div class="card" style="margin-top:30px">
+      <h3>Latest events</h3>
+      <table class="table">
+        <thead><tr><th>#</th><th>Event</th><th>Actor</th><th>Details</th><th>Block</th><th>Tx</th></tr></thead>
+        <tbody id="chainlog-body"></tbody>
+      </table>
+      <div id="chainlog-empty" class="empty">Nothing on-chain yet.</div>
+    </div>
+
+    <div class="card">
+      <h3>Recent blocks</h3>
+      <div id="chain-blocks"></div>
+      <div id="chain-blocks-empty" class="empty">No blocks loaded.</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/chain.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

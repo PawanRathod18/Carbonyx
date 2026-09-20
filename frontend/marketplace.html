@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/marketplace.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="marketplace">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Transparent trading</p>
+      <h1>The CBX <span class="hl">marketplace</span></h1>
+      <p>One credit is one tonne of CO2-equivalent. Sellers escrow their credits in the marketplace contract; buyers pay in ETH; a 1% platform fee funds the protocol.</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:30px">
+      <div class="card">
+        <h3>List credits for sale</h3>
+        <div class="form-row">
+          <label>Project (minted)
+            <select id="m-project"></select>
+          </label>
+          <label>Amount (tCO2e)
+            <input id="m-amount" type="number" min="1" step="1" value="10">
+          </label>
+          <label>Price per credit (ETH)
+            <input id="m-price" type="number" min="0.0001" step="0.001" value="0.01">
+          </label>
+        </div>
+        <div class="form-row">
+          <button id="btn-list" class="btn primary">Create listing</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Retire credits</h3>
+        <div class="form-row">
+          <label>Amount (tCO2e) <input id="r-amount" type="number" min="1" step="1" value="1"></label>
+          <label>Reason <input id="r-reason" type="text" placeholder="e.g. FY26 corporate offset"></label>
+        </div>
+        <div class="form-row">
+          <button id="btn-retire" class="btn danger">Retire permanently</button>
+        </div>
+        <p class="hint">Retiring burns the credits on-chain so they can never be traded again - that is what makes them a true offset.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Active listings</h3>
+      <table class="table" id="listings-table">
+        <thead>
+          <tr><th>ID</th><th>Project</th><th>Ecosystem</th><th>Seller</th>
+              <th>Credits</th><th>Price / credit</th><th>Total (ETH)</th><th></th></tr>
+        </thead>
+        <tbody id="listings-body"></tbody>
+      </table>
+      <div id="listings-empty" class="empty">No active listings yet.</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/marketplace.js?v=47"></script>
+<script src="js/tour.js?v=47"></script>
+<script src="js/vendor/qrcode.min.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

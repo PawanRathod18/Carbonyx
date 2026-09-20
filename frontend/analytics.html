@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/analytics.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="analytics">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Data-driven insight</p>
+      <h1>Network <span class="hl">analytics</span></h1>
+      <p>Every quantification, verification and trade - aggregated into charts. See where the carbon sits, how projects flow through the MRV funnel, and what the market is paying.</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:30px">
+      <div class="card chart-card">
+        <div class="chart-title">Carbon stock by ecosystem</div>
+        <div class="donut-wrap">
+          <svg id="eco-donut" width="220" height="220" viewBox="0 0 220 220"></svg>
+          <div class="donut-legend" id="eco-legend"></div>
+        </div>
+      </div>
+      <div class="card chart-card">
+        <div class="chart-title">Verification pipeline (MRV funnel)</div>
+        <div class="bars" id="funnel-bars"></div>
+        <div class="axis-note">Number of projects at each lifecycle stage.</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card chart-card">
+        <div class="chart-title">Cumulative on-chain activity</div>
+        <svg id="activity-line" viewBox="0 0 480 240" style="width:100%"></svg>
+        <div class="axis-note">Events anchored per block (most recent 40 events).</div>
+      </div>
+      <div class="card chart-card">
+        <div class="chart-title">CBX trade history</div>
+        <svg id="price-chart" viewBox="0 0 480 240" style="width:100%"></svg>
+        <div class="axis-note" id="price-note">Price per credit (ETH) of completed purchases.</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="chart-title">Machine learning cross-check</div>
+        <div id="ml-status"></div>
+      </div>
+      <div class="card">
+        <div class="chart-title">Climate impact of measured stock</div>
+        <div id="analytics-impact"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/analytics.js?v=47"></script>
+
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

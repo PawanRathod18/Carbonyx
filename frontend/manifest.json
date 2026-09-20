@@ -1,0 +1,17 @@
+{
+  "name": "CARBONYX",
+  "short_name": "CARBONYX",
+  "description": "Blue-carbon MRV platform: mangrove monitoring, carbon credits, and an embedded blockchain marketplace.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050a0e",
+  "theme_color": "#050a0e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

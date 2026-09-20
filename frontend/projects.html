@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects and MRV - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/projects.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="projects">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Measure, report, verify</p>
+      <h1>Projects and <span class="hl">quantification</span></h1>
+      <p>Register a coastal project, then run the satellite engine: multispectral classification, InVEST-style carbon modelling and a signed verification report.</p>
+    </div>
+
+    <div class="card" style="margin-top:30px">
+      <h3>Register a blue carbon project</h3>
+      <div class="form-row">
+        <label>Project name <input id="f-name" type="text" placeholder="e.g. Sundarbans Restoration Phase 1"></label>
+        <label>Ecosystem
+          <select id="f-ecosystem">
+            <option value="mangrove">Mangrove forest</option>
+            <option value="seagrass">Seagrass meadow</option>
+            <option value="saltmarsh">Salt marsh</option>
+          </select>
+        </label>
+        <label>Country <input id="f-country" type="text" placeholder="India"></label>
+      </div>
+      <div class="form-row">
+        <label>min Lon <input id="f-lon1" type="number" step="0.001" value="88.85"></label>
+        <label>min Lat <input id="f-lat1" type="number" step="0.001" value="21.55"></label>
+        <label>max Lon <input id="f-lon2" type="number" step="0.001" value="89.15"></label>
+        <label>max Lat <input id="f-lat2" type="number" step="0.001" value="21.95"></label>
+      </div>
+      <div class="form-row">
+        <button id="btn-register" class="btn primary">Register project</button>
+        <span class="hint">Load a demo region:
+          <select id="demo-regions"></select>
+        </span>
+      </div>
+      <div id="qprogress-slot"></div>
+    </div>
+
+    <div id="projects-list" class="projects-grid"></div>
+  </div>
+</main>
+
+<div id="modal" class="modal-backdrop hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modal-title">Quantification report</h3>
+      <button id="modal-close" class="xbtn">×</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/report.js?v=47"></script>
+<script src="js/projects.js?v=47"></script>
+<script src="js/tour.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

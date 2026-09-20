@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/dashboard.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="dashboard">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Command centre</p>
+      <h1>Platform <span class="hl">dashboard</span></h1>
+      <p>Live state of the CARBONYX network - projects, verified carbon and marketplace activity at a glance.</p>
+    </div>
+
+    <div class="stat-strip" style="margin-top:34px">
+      <div class="stat"><div class="v" id="d-projects" data-count="0">0</div><div class="l">Projects registered</div></div>
+      <div class="stat"><div class="v" id="d-verified" data-count="0">0</div><div class="l">Verified projects</div></div>
+      <div class="stat"><div class="v" id="d-issued" data-count="0">0</div><div class="l">Credits issued (tCO2e)</div></div>
+      <div class="stat"><div class="v" id="d-listings" data-count="0">0</div><div class="l">Active listings</div></div>
+      <div class="stat"><div class="v" id="d-stock" data-count="0">0</div><div class="l">Stock measured (tCO2e)</div></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:24px">
+      <div class="card">
+        <h3>Recent chain activity</h3>
+        <div id="dash-events" class="event-list"></div>
+      </div>
+      <div class="card">
+        <h3>Quick actions</h3>
+        <div class="projects-grid" style="grid-template-columns:1fr">
+          <a class="svc" href="projects.html" style="text-decoration:none">
+            <h3 style="margin:0">+ Register a project</h3>
+            <p>Define a coastal region and run the satellite quantification engine on it.</p>
+          </a>
+          <a class="svc" href="verification.html" style="text-decoration:none">
+            <h3 style="margin:0">Review pending verifications</h3>
+            <p>Act as the independent verifier - approve, reject, then mint credits.</p>
+          </a>
+          <a class="svc" href="marketplace.html" style="text-decoration:none">
+            <h3 style="margin:0">Trade on the marketplace</h3>
+            <p>List credits, buy from other owners, or retire credits permanently.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/dashboard.js?v=47"></script>
+<script src="js/tour.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

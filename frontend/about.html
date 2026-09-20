@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/about.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="about">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Who we are</p>
+      <h1>Blue carbon, made <span class="hl">verifiable</span></h1>
+      <p>CARBONYX is an independent, solo-built platform created on one belief: climate finance only works when the numbers can be trusted - so every number here is provable.</p>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat"><div class="v" id="about-projects" data-count="0">0</div><div class="l">Projects on our demo network</div></div>
+      <div class="stat"><div class="v" id="about-stock" data-count="0">0</div><div class="l">tCO2e measured by the engine</div></div>
+      <div class="stat"><div class="v" data-count="1">0</div><div class="l">Solo developer</div></div>
+      <div class="stat"><div class="v" data-count="3">0</div><div class="l">Smart contracts</div></div>
+      <div class="stat"><div class="v" data-count="10">0</div><div class="l">Platform pages</div></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:26px">
+      <div class="card">
+        <h3>The problem we chose</h3>
+        <p class="flow-note">
+          Coastal ecosystems - mangroves, seagrass meadows and salt marshes -
+          capture carbon at rates several times higher than terrestrial forests,
+          yet blue carbon projects remain locked out of serious climate finance.
+          Current carbon markets suffer from unverifiable claims, opaque trading
+          and expensive auditing. Buyers cannot see where a credit came from;
+          project owners cannot prove their carbon is real.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Our answer</h3>
+        <p class="flow-note">
+          CARBONYX fuses three worlds into one pipeline. Satellite remote sensing
+          (Sentinel-2 + Google Earth Engine) measures the carbon. An InVEST-style
+          model converts pixels into tonnes. A blockchain registry makes every
+          step immutable - verification hashes, credit mints, trades and
+          permanent retirements all live on-chain, auditable by anyone.
+          The result is a blue carbon credit you can actually trust.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>What we built</h3>
+      <div class="grid-2" style="margin-top:4px">
+        <p class="flow-note">
+          <b style="color:var(--amber-light)">Quantification engine</b> - a synthetic
+          Sentinel-2 simulator (deterministic, offline) plus a real Google Earth
+          Engine client, NDVI/NDWI classification and coastal blue carbon
+          modelling with a machine-learning cross-check.
+        </p>
+        <p class="flow-note">
+          <b style="color:var(--amber-light)">Three Solidity contracts</b> - a project
+          registry with independent verifier roles, an ERC20-style credit token
+          (1 CBX = 1 tCO2e) with gated minting, and an escrow marketplace
+          priced in ETH with a 1% platform fee and permanent retirement.
+        </p>
+        <p class="flow-note">
+          <b style="color:var(--amber-light)">Full web platform</b> - a FastAPI
+          backend with SQLite persistence, ten animated pages including an
+          offline world map, analytics charts, per-account portfolios,
+          printable retirement certificates and a guided tour for demos.
+        </p>
+        <p class="flow-note">
+          <b style="color:var(--amber-light)">Honest engineering</b> - carbon
+          coefficients are documented literature-range defaults, the ML model
+          reports its own R2, and every risk flag the system raises is shown
+          to the verifier - nothing is hidden behind a nice dashboard.
+        </p>
+      </div>
+    </div>
+
+    <section class="block" style="padding-top:20px">
+      <p class="overline reveal">The builder</p>
+      <h2 class="display reveal">Meet <span class="hl">CARBONYX</span></h2>
+      <div class="team-grid">
+        <div class="member reveal">
+          <div class="avatar">PR</div>
+          <h4>Pawan Rathod</h4>
+          <div class="role">Creator · Full-stack Developer</div>
+          <p>Designed and engineered CARBONYX end-to-end — the FastAPI backend, embedded EVM chain and smart contracts, satellite quantification and carbon models, and the entire frontend design system.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">
+      <a class="btn primary" href="login.html">Join the platform <span class="arr">→</span></a>
+      <a class="btn ghosty" href="docs.html">Read the methodology</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/about.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

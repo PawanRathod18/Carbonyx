@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/tour.css?v=47">
+<link rel="stylesheet" href="css/map.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="map">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="overline">Geospatial view</p>
+      <h1>Blue carbon <span class="hl">world map</span></h1>
+      <p>Every registered project plotted by its bounding box — mangroves, seagrass meadows and salt marshes across the world's coastlines. Search for a project, country, or ecosystem type below.</p>
+    </div>
+
+    <div class="map-layout" style="margin-top:30px">
+
+      <div class="map-sidebar">
+        <div class="map-search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="text" id="map-search" placeholder="Search projects, countries, ecosystems..." autocomplete="off">
+          <button id="map-search-clear" class="search-clear" title="Clear">&times;</button>
+        </div>
+
+        <div class="map-filter-chips">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="mangrove">Mangrove</button>
+          <button class="filter-chip" data-filter="seagrass">Seagrass</button>
+          <button class="filter-chip" data-filter="saltmarsh">Salt marsh</button>
+        </div>
+
+        <div class="map-stats-row">
+          <div class="ms-stat">
+            <span class="ms-v" id="ms-count">0</span>
+            <span class="ms-l">projects</span>
+          </div>
+          <div class="ms-stat">
+            <span class="ms-v" id="ms-stock">0</span>
+            <span class="ms-l">tCO2e stock</span>
+          </div>
+          <div class="ms-stat">
+            <span class="ms-v" id="ms-countries">0</span>
+            <span class="ms-l">countries</span>
+          </div>
+        </div>
+
+        <div class="map-results" id="map-results">
+          <p class="map-empty">Loading projects...</p>
+        </div>
+      </div>
+
+      <div class="map-shell">
+        <canvas id="worldmap"></canvas>
+        <div class="map-hud">
+          <button class="btn ghosty small" id="map-zoom-in">Zoom +</button>
+          <button class="btn ghosty small" id="map-zoom-out">Zoom -</button>
+          <button class="btn ghosty small" id="map-reset">Reset view</button>
+        </div>
+        <div class="map-legend-box">
+          <span><span class="sw" style="background:#34d399"></span>Mangrove</span>
+          <span><span class="sw" style="background:#38bdf8"></span>Seagrass</span>
+          <span><span class="sw" style="background:#f5a623"></span>Salt marsh</span>
+        </div>
+        <div class="map-coords" id="map-coords">—</div>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:12px">Drag to pan, scroll to zoom, click a project on the map or in the list to open its quantification report. Map data: world.geo.json (bundled, fully offline).</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fine">CARBONYX — independently designed and built by Pawan Rathod. Demo network: embedded Python chain.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/report.js?v=47"></script>
+<script src="data/world-data.js?v=47"></script>
+<script src="data/city-data.js?v=47"></script>
+<script src="data/eco-data.js?v=47"></script>
+<script src="js/map.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

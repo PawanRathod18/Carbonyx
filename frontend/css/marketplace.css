@@ -1,0 +1,16 @@
+.cert { background: linear-gradient(160deg, rgba(10, 30, 40,.9), rgba(5, 12, 18,.95)); border: 1px solid var(--line); border-radius: 18px; padding: 34px 38px; position: relative; overflow: hidden; }
+.cert::before { content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(52,211,153,.14), transparent 65%); top: -140px; right: -90px; }
+.cert .cert-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .35em; margin-bottom: 20px; }
+.cert h2 { margin: 0 0 4px; text-transform: uppercase; letter-spacing: .04em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cert .sub { color: var(--muted); font-size: .82rem; margin: 0 0 24px; }
+.cert .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 26px; font-size: .88rem; }
+.cert .field .k { font-size: .64rem; text-transform: uppercase; letter-spacing: .12em; color: var(--amber-light); margin-bottom: 3px; }
+.cert .field .v { font-weight: 700; }
+.cert .qr { display: flex; gap: 18px; align-items: center; margin-top: 26px; padding-top: 22px; border-top: 1px dashed var(--line); }
+.cert .qr canvas { border-radius: 10px; background: #fff; padding: 8px; }
+.cert .qr .note { font-size: .74rem; color: var(--muted); line-height: 1.7; }
+@media print {
+  body * { visibility: hidden; }
+  .cert, .cert * { visibility: visible; }
+  .cert { position: fixed; inset: 0; background: #0d0726; border: none; }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in - CARBONYX</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/auth.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="login">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <svg class="logo-mark" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true">
+        <defs><linearGradient id="lgx" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffe9b8"/><stop offset="1" stop-color="#f5a623"/>
+        </linearGradient></defs>
+        <path d="M4 30c6-2 10-8 12-14 3 8 7 12 14 14-7 3-11 7-14 12-3-5-7-9-12-12z" fill="url(#lgx)"/>
+        <path d="M26 10c4 5 8 7 14 8-6 3-9 5-11 9-2-4-5-6-9-8 3-2 5-5 6-9z" fill="#0a3a30" opacity=".85"/>
+      </svg>
+      <h1>CARBONYX</h1>
+      <p>Your gateway to verified blue carbon finance</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" type="button">Sign in</button>
+      <button class="auth-tab" id="tab-signup" type="button">Create account</button>
+    </div>
+
+    <form id="auth-form" autocomplete="on">
+      <div class="auth-field" id="f-name-row" style="display:none">
+        <label>Full name
+          <input id="f-name" type="text" placeholder="Pawan Rathod" autocomplete="name">
+        </label>
+      </div>
+      <div class="auth-field">
+        <label>Email
+          <input id="f-email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        </label>
+      </div>
+      <div class="auth-field">
+        <label>Password
+          <input id="f-password" type="password" placeholder="at least 6 characters" autocomplete="current-password" required>
+        </label>
+      </div>
+      <div class="auth-field" id="f-confirm-row" style="display:none">
+        <label>Confirm password
+          <input id="f-confirm" type="password" placeholder="repeat your password" autocomplete="new-password">
+        </label>
+      </div>
+      <button class="btn primary" id="btn-auth" type="submit" style="width:100%;margin-top:6px">Sign in</button>
+    </form>
+
+    <div class="auth-wallet" id="auth-wallet">
+      Each account is assigned a demo wallet from the local Hardhat chain.
+      Your wallet: <b id="auth-wallet-addr"></b>
+    </div>
+
+    <p class="auth-note">
+      Accounts are stored in the platform database with PBKDF2-hashed passwords.
+      Each new account is assigned its own on-chain demo wallet.
+    </p>
+    <p class="auth-alt">Just exploring? <a href="dashboard.html">Continue to the demo without signing in</a></p>
+    <p class="auth-alt"><a href="index.html" style="color:var(--muted)">← Back to home</a></p>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/auth.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

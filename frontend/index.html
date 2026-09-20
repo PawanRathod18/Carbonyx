@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARBONYX - Verified Blue Carbon</title>
+<link rel="stylesheet" href="css/base.css?v=47">
+<link rel="stylesheet" href="css/home.css?v=47">
+<link rel="stylesheet" href="css/chatbot.css?v=47">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/print.css?v=47" media="print">
+<link rel="stylesheet" href="css/improvements.css?v=47">
+<link rel="stylesheet" href="css/cinema.css?v=47">
+<link rel="stylesheet" href="css/ocean.css?v=47">
+</head>
+<body data-page="home">
+
+<div class="bg-fx">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<nav class="topbar" id="topbar"></nav>
+
+<main>
+
+  <section class="home-hero">
+    <div class="wrap">
+      <p class="hero-eyebrow rise">Real ecosystems. Verified carbon.</p>
+      <h1 class="hero-title rise d1">
+        Where coastlines become<br>
+        <span class="hero-accent">climate capital</span>
+      </h1>
+      <p class="hero-sub rise d2">
+        Satellite-verified mangrove restoration, on-chain carbon credits,
+        and transparent trading — built for the coastlines that matter.
+      </p>
+      <div class="gc-action home-hero-cta rise d3">
+        <a class="gc-btn" href="login.html">Get started <span class="arr">→</span></a>
+        <a class="gc-demo-btn" href="dashboard.html" id="start-demo-btn">▶ Guided demo</a>
+      </div>
+      <button class="gc-cart cart-open-trigger rise d3" title="Your cart">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Cart
+        <span class="cart-badge">0</span>
+      </button>
+      <div class="hero-proof rise d4">
+        <span class="proof-star">★</span>
+        <span class="proof-text"><b id="stat-projects" data-count="0">0</b> projects verified · <b id="stat-issued" data-count="0">0</b> CBX minted</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:10px">
+    <div class="wrap">
+      <div class="home-stats">
+        <div class="stat"><div class="v" id="stat-stock" data-count="0">0</div><div class="l">Carbon stock (tCO₂e)</div></div>
+        <div class="stat"><div class="v" id="stat-listings" data-count="0">0</div><div class="l">Active listings</div></div>
+        <div class="stat"><div class="v">1:1</div><div class="l">CBX = tCO₂e</div></div>
+        <div class="stat"><div class="v">SHA-256</div><div class="l">Report hash</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Mangrove <b>forests</b></span><span>Seagrass <b>meadows</b></span>
+      <span>Salt <b>marshes</b></span><span>Sentinel-2 <b>imagery</b></span>
+      <span>NDVI <b>classification</b></span><span>On-chain <b>verification</b></span>
+      <span>1 CBX = 1 <b>tCO₂e</b></span>
+      <span>Mangrove <b>forests</b></span><span>Seagrass <b>meadows</b></span>
+      <span>Salt <b>marshes</b></span><span>Sentinel-2 <b>imagery</b></span>
+      <span>NDVI <b>classification</b></span><span>On-chain <b>verification</b></span>
+      <span>1 CBX = 1 <b>tCO₂e</b></span>
+    </div>
+  </div>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <p class="overline reveal">Our services</p>
+      <h2 class="display reveal">What does CARBONYX <span class="hl">do?</span></h2>
+      <p class="lead reveal">
+        One platform for the complete blue carbon lifecycle — from raw satellite
+        pixels to a tradable, retirement-grade digital asset. Every number is
+        computed by an open engine, every decision is recorded on-chain.
+      </p>
+      <div class="cards-grid">
+        <div class="svc reveal">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 7 9 3 3 9l4 4"/><path d="m17 11 4 4-6 6-4-4"/>
+              <circle cx="11" cy="13" r="1.4"/><path d="M2 22 8.5 15.5"/><path d="M14 2 22 10"/>
+            </svg>
+          </div>
+          <h3>Satellite quantification</h3>
+          <p>Multispectral Sentinel-2 data is classified with NDVI / NDWI indices per ecosystem, then an InVEST-style coastal blue carbon model estimates biomass, soil carbon and 20-year sequestration.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>On-chain verification</h3>
+          <p>An independent verifier reviews each report. Approving a project anchors the report's SHA-256 hash on the blockchain — tamper-proof evidence anyone can audit, forever.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/><path d="M12 7v10"/>
+              <path d="M9 9.5c0-1 1.3-1.7 3-1.7s3 .7 3 1.7-1.3 1.8-3 2.2-3 1.2-3 2.3 1.3 1.7 3 1.7 3-.7 3-1.7"/>
+            </svg>
+          </div>
+          <h3>Credit minting</h3>
+          <p>Verified projects mint CBX credits, one credit being exactly one tonne of CO₂-equivalent. A conservative buffer is held back and minting is gated by the smart contract — not by trust.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>
+              <path d="M3 3v18h18"/>
+            </svg>
+          </div>
+          <h3>Transparent trading</h3>
+          <p>A peer-to-peer marketplace with escrow, a 1% platform fee and permanent retirement. Every listing, purchase and retirement is an on-chain event visible in the Chain Log.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap grid-2">
+      <div>
+        <p class="overline reveal">The MRV pipeline</p>
+        <h2 class="display reveal">How it <span class="hl">works</span></h2>
+        <p class="lead reveal">
+          Five steps from a patch of coastline to a retirement-grade carbon
+          credit — each one observable, each one on-chain.
+        </p>
+        <a class="btn primary reveal" href="login.html">Start now <span class="arr">→</span></a>
+      </div>
+      <div class="timeline">
+        <div class="tstep reveal"><h4><span class="n">01</span>Register</h4>
+          <p>A project owner registers a coastal project with its geographic bounding box on the registry contract.</p></div>
+        <div class="tstep reveal"><h4><span class="n">02</span>Quantify</h4>
+          <p>The engine classifies vegetation from satellite bands and models carbon stock and sequestration.</p></div>
+        <div class="tstep reveal"><h4><span class="n">03</span>Verify</h4>
+          <p>An independent verifier approves or rejects the report; approval anchors the report hash on-chain.</p></div>
+        <div class="tstep reveal"><h4><span class="n">04</span>Mint</h4>
+          <p>CBX credits are minted to the owner, capped by the buffered projection of future sequestration.</p></div>
+        <div class="tstep reveal"><h4><span class="n">05</span>Trade and retire</h4>
+          <p>Credits are listed, bought and finally retired — burned on-chain so they can never be sold again.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="card home-cta reveal">
+        <h3>Ready to trade verified blue carbon?</h3>
+        <p>Spin up the guided demo — a full project lifecycle, from satellite pixels to retired credits, in minutes.</p>
+        <div class="gc-action">
+          <a class="gc-btn" href="login.html">Get started <span class="arr">→</span></a>
+          <a class="gc-demo-btn" href="dashboard.html">▶ Guided demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div style="max-width:300px">
+      <h5>Carbonyx</h5>
+      <p>An intelligent decentralized framework for verified quantification and transparent trading of blue carbon assets.</p>
+    </div>
+    <div>
+      <h5>Platform</h5>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="projects.html">Projects and MRV</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="chain.html">Chain Log</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About the team</a></li>
+        <li><a href="docs.html">Methodology</a></li>
+        <li><a href="login.html">Sign in</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Project</h5>
+      <p>Designed and built end-to-end by <b>Pawan Rathod</b></p>
+    </div>
+  </div>
+  <div class="wrap fine">CARBONYX — an independent portfolio project by Pawan Rathod. Demo network: embedded Python chain. Development keys only.</div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/core.js?v=47"></script>
+<script src="js/home.js?v=47"></script>
+<script src="js/cart.js?v=47"></script>
+<script src="js/improvements.js?v=47"></script>
+<script src="js/chatbot.js?v=47"></script>
+</body>
+</html>

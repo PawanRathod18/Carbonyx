@@ -1,0 +1,7 @@
+.block-row { border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; overflow: hidden; background: rgba(13, 13, 30,.55); animation: rowIn .5s ease both; animation-delay: calc(var(--i, 0) * 60ms); }
+.block-row .head { display: flex; gap: 16px; align-items: center; padding: 13px 18px; cursor: pointer; user-select: none; transition: background .2s; }
+.block-row .head:hover { background: rgba(245, 166, 35,.08); }
+.block-row .bn { font-weight: 800; color: var(--amber-light); min-width: 78px; }
+.block-row .meta { display: flex; gap: 18px; color: var(--muted); font-size: .76rem; flex-wrap: wrap; }
+.block-row .body { display: none; border-top: 1px solid var(--line-soft); padding: 14px 18px; }
+.block-row.open .body { display: block; animation: riseIn .35s ease; }
