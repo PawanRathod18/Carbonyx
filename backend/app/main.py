@@ -78,8 +78,12 @@ PAGES = {
 def favicon():
     return FileResponse(config.FRONTEND_DIR / "favicon.svg")
 
-@app.get("/logo.png", include_in_schema=False)
+@app.get("/logo.svg", include_in_schema=False)
 def logo():
+    return FileResponse(config.FRONTEND_DIR / "logo.svg")
+
+@app.get("/logo.png", include_in_schema=False)
+def logo_png():
     return FileResponse(config.FRONTEND_DIR / "logo.png")
 
 @app.get("/manifest.json", include_in_schema=False)

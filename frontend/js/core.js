@@ -297,7 +297,9 @@ function buildNavbar() {
 
   bar.innerHTML = `
     <div class="tb-left">
-      <a class="logo" href="index.html"><img src="logo.png" onerror="this.onerror=null;this.src='logo.png'" alt="CARBONYX" class="logo-lockup"><span class="brand-stack"><span class="brand-word">CARBONY<span class="brand-x">X</span></span><span class="brand-tag">Real ecosystems. Verified carbon.</span></span></a>
+    <a class="logo" href="index.html"><img src="data/logo.png" onerror="this.onerror=null;this.src='logo.svg'" alt="CARBONYX" class="logo-lockup"><span class="brand-stack"><span class="brand-word">CARBONY<span class="brand-x">X</span></span><span class="brand-tag">Real ecosystems. Verified carbon.</span></span></a>
+
+
     </div>
     <div class="tb-center">
       <nav class="pillnav">
